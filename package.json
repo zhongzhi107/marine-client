@@ -1,9 +1,10 @@
 {
-  "name": "marine",
-  "version": "0.0.0",
+  "name": "marine-client",
+  "version": "0.0.1",
   "description": "Marine",
-  "repository": "https://github.com/zhongzhi107/marine",
+  "repository": "https://github.com/zhongzhi107/marine-client",
   "license": "MIT",
+  "author": "Joe Zhong <zhong.zhi@163.com>",
   "devDependencies": {
     "css-loader": "^0.9.0",
     "connect-livereload": "0.5.1",
@@ -35,5 +36,8 @@
     "url-loader": "~0.5.5",
     "webpack": "^1.4.15",
     "webpack-dev-server": "^1.7.0"
+  },
+  "engines": {
+    "node": "> 0.11.4"
   }
 }
