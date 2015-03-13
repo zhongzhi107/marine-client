@@ -1,0 +1,6 @@
+.about p {
+  margin: 5px 0;
+  text-indent: 2em;
+  line-height: 150%;
+  background: url(images/1.png) no-repeat;
+}
