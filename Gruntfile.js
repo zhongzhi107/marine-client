@@ -92,14 +92,14 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'webpack',
-    'copy',
+    'copy:dist',
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',
     // 'uglify:generated',
     'rev:dist',
     'usemin',
-    'copy:index',
+    'copy:refs',
     'configureRewriteRules',
     'connect:dist'
   ]);

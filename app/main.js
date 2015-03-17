@@ -6,6 +6,7 @@ var {Router} = require('director');
 var Dispatcher = require('./core/Dispatcher');
 var ActionTypes = require('./constants/ActionTypes');
 var router;
+var urlrewrite = require('../config/urlrewrite');
 
 // Export React so the dev tools can find it
 (window !== window.top ? window.top : window).React = React;
@@ -35,7 +36,8 @@ Dispatcher.register((payload) => {
  * Check if Page component has a layout property; and if yes, wrap the page
  * into the specified layout, then mount to document.body.
  */
-function render(Page, query) {
+function render(action, query) {
+  var Page = require('./components/pages/' + action);
   var queryStringParse = require('../config/queryStringParse');
   var layout = null, child = null, props = queryStringParse(query) || {};
   while ((layout = Page.type.layout || (Page.defaultProps && Page.defaultProps.layout))) {
@@ -49,11 +51,16 @@ function render(Page, query) {
 
 // Define URL routes
 // See https://github.com/flatiron/director
-var routes = {
-  '/': () => render(require('./components/pages/Index')),
-  '/about': () => render(require('./components/pages/About')),
-  '/hotellist/:query': (query) => render(require('./components/pages/HotelList'), query)
-};
+var routes = {};
+Object.keys(urlrewrite).forEach((key) => {
+  routes[key] = (query = {}) => render(urlrewrite[key], query)
+});
+
+// var routes = {
+//   '/': () => render(require('./components/pages/Index')),
+//   '/about': () => render(require('./components/pages/About')),
+//   '/hotellist/:query': (query) => render(require('./components/pages/HotelList'), query)
+// };
 
 // Initialize a router
 router = new Router(routes).configure({html5history: true}).init();
