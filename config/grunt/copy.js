@@ -23,14 +23,17 @@ module.exports = {
   },
 
   refs: {
+    options: {
+      process: function (content, srcpath) {
+        return content.replace(/<\%= body \%>/g,"<%-body%>");
+      }
+    },
     files: [
       {
         expand: true,
         cwd: '<%=ma.path.app%>',
+        src: '{actions,components,constants,core,stores}/**/*',
         dest: '<%=ma.path.dist%>/refs',
-        src: [
-          '{actions,components,constants,core,stores}/**/*'
-        ]
       },
       {
         expand: true,
@@ -38,8 +41,8 @@ module.exports = {
         dest: '<%=ma.path.dist%>/refs'
       },
       {
-        dest: '<%=ma.path.dist%>/index.html',
-        src: '<%=ma.path.dist%>/refs/index.html'
+        src: '<%=ma.path.dist%>/index.html',
+        dest: '<%=ma.path.dist%>/refs/index.ejs'
       }
     ]
   }
