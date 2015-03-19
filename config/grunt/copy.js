@@ -31,12 +31,6 @@ module.exports = {
     files: [
       {
         expand: true,
-        cwd: '<%=ma.path.app%>',
-        src: '{actions,components,constants,core,stores}/**/*',
-        dest: '<%=ma.path.dist%>/refs',
-      },
-      {
-        expand: true,
         src: 'config/{queryStringParse,urlrewrite}.js',
         dest: '<%=ma.path.dist%>/refs'
       },

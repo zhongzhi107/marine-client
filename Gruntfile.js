@@ -17,6 +17,12 @@ module.exports = function(grunt) {
   // 获取编译环境的cdnRoot
   var cdnRoot = require('./config/cdnroot')(grunt);
 
+  //var content = require('fs').readFileSync('app/main.js', {encoding: 'utf8'});
+  // console.log(content);
+
+  //var reactTools = require('react-tools');
+  //console.log(reactTools.transform(content));
+  //return;
   grunt.initConfig({
     // 项目配置
     ma: ma,
@@ -72,7 +78,9 @@ module.exports = function(grunt) {
           // new webpack.optimize.UglifyJsPlugin()
         )
       }
-    }
+    },
+
+    jsx2js: require('./config/grunt/jsx2js')
   });
 
   //grunt.loadNpmTasks('grunt-webpack');
@@ -99,9 +107,14 @@ module.exports = function(grunt) {
     // 'uglify:generated',
     'rev:dist',
     'usemin',
-    'copy:refs',
+    'refs',
     'configureRewriteRules',
     'connect:dist'
+  ]);
+
+  grunt.registerTask('refs', [
+    'copy:refs',
+    'jsx2js'
   ]);
 
 };

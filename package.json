@@ -20,6 +20,7 @@
     "grunt-connect-route": "0.2.7",
     "grunt-contrib-uglify": "0.7.0",
     "grunt-contrib-watch": "0.6.1",
+    "grunt-jsx2js": "0.1.0",
     "grunt-rev": "0.1.0",
     "grunt-usemin": "3.0.0",
     "grunt-webpack": "~1.0.8",
