@@ -16,7 +16,8 @@ var HotelItem = React.createClass({
 
     allHotels.forEach((hotel) => {
       hotels.push(
-        <div className={className}  key={hotel.id}>
+        /* jshint ignore:start */
+        <div className={className} key={hotel.id}>
           <div className="pure-u-1-4">
             <img src={hotel.image} alt={hotel.name} />
           </div>
@@ -28,6 +29,7 @@ var HotelItem = React.createClass({
             <s>F</s>
           </div>
         </div>
+        /* jshint ignore:end */
       );
     });
 

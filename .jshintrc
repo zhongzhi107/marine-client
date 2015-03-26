@@ -25,7 +25,6 @@
         "define": true,
         "alert": true,
         "confirm": true,
-        "DEBUG": true,
-        "CDN_ROOT": true
+        "DEBUG": true
     }
 }

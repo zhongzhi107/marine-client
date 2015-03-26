@@ -4,7 +4,7 @@ module.exports = function(str, sep, eq) {
   sep = sep || ',';
   eq = eq || '-';
 
-  var _GET = {};
+  var queryString = {};
 
   if (str) {
     str.split(sep).forEach(function(item) {
@@ -12,18 +12,18 @@ module.exports = function(str, sep, eq) {
         key = tmp[0],
         value = decodeURIComponent(tmp[1] || '');
 
-      if (_GET[key]) {
-        if ($.isArray(_GET[key])) {
-          _GET[key].push(value);
+      if (queryString[key]) {
+        if (Object.prototype.toString.call(queryString[key]) === '[object Array]') {
+          queryString[key].push(value);
         } else {
-          _GET[key] = [_GET[key], value];
+          queryString[key] = [queryString[key], value];
         }
       }
       else {
-        _GET[key] = value;
+        queryString[key] = value;
       }
     });
   }
 
-  return _GET;
+  return queryString;
 };

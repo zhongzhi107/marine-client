@@ -23,8 +23,8 @@ class Store {
 
     var self = this;
 
-    invariant(!methods.dispatcherToken,'"dispatcherToken" is a reserved name and cannot be used as a method name.');
-    invariant(!methods.Mixin,'"Mixin" is a reserved name and cannot be used as a method name.');
+    invariant(!methods.dispatcherToken, '"dispatcherToken" is a reserved name and cannot be used as a method name.');
+    invariant(!methods.Mixin, '"Mixin" is a reserved name and cannot be used as a method name.');
 
     assign(this, EventEmitter.prototype, methods);
 

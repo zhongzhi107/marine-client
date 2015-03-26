@@ -16,6 +16,10 @@ var config = {
     reasons: DEBUG
   },
 
+  eslint: {
+    configFile: '.eslintrc'
+  },
+
   entry: './app/main.js',
   output: {
     path: '.tmp/js',
@@ -23,19 +27,18 @@ var config = {
   },
   plugins: [],
   module: {
-    // preLoaders: [
-    //   {
-    //     test: /\.js$/,
-    //     exclude: /node_modules/,
-    //     loader: 'eslint-loader'
-    //   }
-    // ],
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      }
+    ],
     loaders: [
       { test: /\.css$/, loader: 'style!css' + minimize + AUTOPREFIXER_LOADER },
       { test: /\.less$/, loader: 'style!css' + minimize + AUTOPREFIXER_LOADER + '!less' },
       { test: /\.jpg/, loader: 'url?limit=8192&minetype=image/jpg' },
       { test: /\.png/, loader: 'url?limit=8192&minetype=image/png' },
-      //{ test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader?experimental'}/*,
       { test: /\.jsx?$/, loader: 'jsx?harmony&stripTypes' }
     ]
   }

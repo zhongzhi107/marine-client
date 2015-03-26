@@ -43,24 +43,19 @@ function render(action, query) {
   var Page = require('./components/pages/' + action + '.js');
   var queryStringParse = require('../config/queryStringParse');
   var layout = null, child = null, props = queryStringParse(query) || {};
-  console.log('======1======', Page);
-  // console.log(Page.type.layout);
-  console.log('======1.1======');
 
   while ((layout = Page.type.layout || (Page.defaultProps && Page.defaultProps.layout))) {
     child = (<Page {...props}>{child}</Page>);
-  console.log('======2======');
     Page = layout;
   }
   React.render(<Page>{child}</Page>, document.body);
-  console.log('======3======');
 }
 
 // Define URL routes
 // See https://github.com/flatiron/director
 var routes = {};
 Object.keys(urlrewrite).forEach((key) => {
-  routes[key] = (query) => render(urlrewrite[key], query)
+  routes[key] = (query) => render(urlrewrite[key], query);
 });
 
 // Initialize a router

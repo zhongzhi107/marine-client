@@ -12,7 +12,7 @@ var ActionTypes = require('../constants/ActionTypes');
  * @property {string} description
  * @property {string} keywords
  */
-var _page;
+var page;
 
 var PageStore = new Store({
 
@@ -21,7 +21,7 @@ var PageStore = new Store({
    * @returns {Page}
    */
   get() {
-    return _page || require('../constants/Settings').defaults.page;
+    return page || require('../constants/Settings').defaults.page;
   }
 
 });
@@ -31,7 +31,7 @@ PageStore.dispatcherToken = Dispatcher.register(payload => {
   var action = payload.action;
 
   if (action.actionType === ActionTypes.SET_CURRENT_PAGE) {
-    _page = action.page;
+    page = action.page;
     PageStore.emitChange();
   }
 
