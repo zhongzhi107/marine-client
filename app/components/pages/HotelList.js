@@ -5,8 +5,9 @@ var PageActions = require('../../actions/PageActions');
 var App = require('../layout/App');
 var Navbar = require('../common/Navbar');
 var HotelItem = require('../common/HotelItem');
-var _ = require('lodash');
+var _ = require('underscore');
 var ExecutionEnvironment = require('react/lib/ExecutionEnvironment');
+var http = require('superagent');
 
 var HotelListPage = React.createClass({
 
@@ -31,7 +32,7 @@ var HotelListPage = React.createClass({
     });
 
     if (ExecutionEnvironment.canUseDOM) {
-      require('!style!css!less!../../css/hotelList.less');
+      require('../../css/hotelList.less');
     } else {
       this.setStateOnServer();
     }
@@ -54,11 +55,18 @@ var HotelListPage = React.createClass({
 
   componentDidMount() {
     var self = this;
-    var $ = require('jquery');
-    $.getJSON('/api/hotelList', function(result) {
+    // var $ = require('jquery');
+    // $.getJSON('/api/hotelList', function(result) {
+    //   if (self.isMounted()) {
+    //     self.setState({
+    //       list: result.list
+    //     });
+    //   }
+    // });
+    http.get('/api/hotelList').accept('application/json').end((err, res) => {
       if (self.isMounted()) {
         self.setState({
-          list: result.list
+          list: res.body.list
         });
       }
     });

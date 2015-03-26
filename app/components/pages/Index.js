@@ -31,15 +31,15 @@ var HomePage = React.createClass({
   },
 
   componentDidMount() {
-    var self = this;
-    var $ = require('jquery');
-    $.get('/api/test', function(result) {
-      if (self.isMounted()) {
-        self.setState({
-          name: result.name
-        });
-      }
-    });
+    // var self = this;
+    // var $ = require('jquery');
+    // $.get('/api/test', function(result) {
+    //   if (self.isMounted()) {
+    //     self.setState({
+    //       name: result.name
+    //     });
+    //   }
+    // });
   },
 
   render() {

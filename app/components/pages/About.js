@@ -23,8 +23,8 @@ var AboutPage = React.createClass({
   componentWillMount() {
 
     if (ExecutionEnvironment.canUseDOM) {
-      require('!style!css!../../css/about.css');
-      require('!style!css!less!../../css/a.less');
+      require('../../css/about.css');
+      require('../../css/a.less');
     }
 
     PageActions.set({title: AboutPage.meta.title});

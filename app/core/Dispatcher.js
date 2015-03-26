@@ -2,7 +2,9 @@
 'use strict';
 
 var Flux = require('flux');
+//import Flux from 'flux';
 var PayloadSources = require('../constants/PayloadSources');
+//import PayloadSources from '../constants/PayloadSources';
 var assign = require('react/lib/Object.assign');
 
 /**

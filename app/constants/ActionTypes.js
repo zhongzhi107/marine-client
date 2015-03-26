@@ -14,3 +14,14 @@ var ActionTypes = keyMirror({
 });
 
 module.exports = ActionTypes;
+
+// import KeyMirror from 'react/lib/keyMirror';
+//
+// export default keyMirror({
+//   // Route action types
+//   SET_CURRENT_ROUTE: null,
+//
+//   // Page action types
+//   SET_CURRENT_PAGE: null
+//
+// });

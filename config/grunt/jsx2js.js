@@ -2,6 +2,9 @@
 
 module.exports = {
   all: {
+    options: {
+      harmony: true
+    },
     files: [
       {
         expand: true,

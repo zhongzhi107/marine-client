@@ -2,11 +2,11 @@
 
 module.exports = function(req, res) {
   var fs = require('fs');
-  var _ = require('lodash');
   var director = require('director');
   var React = require('react');
   var assign = require('react/lib/Object.assign');
   var urlrewrite = require('./urlrewrite');
+  var _ = require('underscore');
 
   require('node-jsx').install({harmony: true});
 
@@ -24,7 +24,13 @@ module.exports = function(req, res) {
   function getHTML(action, query) {
     var page = require('../app/components/pages/' + action);
     var props = require('./queryStringParse')(query) || {};
-    var filename = './app/components/pages/index.html';
+
+    var filename;
+    if (process.env.NODE_ENV === '') {
+      filename = './app/templates/index.html';
+    } else {
+      filename = './dist/index.html';
+    }
     var src = fs.readFileSync(filename, {encoding: 'utf8'});
     var data = assign(page.meta, {
       body: getBodyHTML(page, props)

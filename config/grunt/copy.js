@@ -4,10 +4,8 @@ module.exports = {
   dist: {
     files: [
       {
-        expand: true,
-        cwd: '<%=ma.path.app%>/components/pages',
-        dest: '<%=ma.path.dist%>',
-        src: '**/*.html'
+        src: '<%=ma.path.app%>/templates/index.html',
+        dest: '<%=ma.path.dist%>/index.html'
       },
       {
         dest: '<%=ma.path.dist%>/js/main.js',
@@ -25,7 +23,7 @@ module.exports = {
   refs: {
     options: {
       process: function (content, srcpath) {
-        return content.replace(/<\%= body \%>/g,"<%-body%>");
+        return content.replace(/<\%=body\%>/g,"<%-body%>");
       }
     },
     files: [

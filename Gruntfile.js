@@ -1,28 +1,15 @@
 'use strict';
 
-// var LIVERELOAD_PORT = require('./config/marine').port.liveReload;
-// var mountFolder = function(connect, dir) {
-//   return connect.static(require('path').resolve(dir));
-// };
-
 module.exports = function(grunt) {
+
+  process.env.NODE_ENV = process.env.NODE_ENV || grunt.option('deploy-type') || '';
 
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
 
   var ma = require('./config/marine');
-  //var webpack = require('webpack');
   var webpackConfig = require('./config/grunt/webpack');
 
-  // 获取编译环境的cdnRoot
-  var cdnRoot = require('./config/cdnroot')(grunt);
-
-  //var content = require('fs').readFileSync('app/main.js', {encoding: 'utf8'});
-  // console.log(content);
-
-  //var reactTools = require('react-tools');
-  //console.log(reactTools.transform(content));
-  //return;
   grunt.initConfig({
     // 项目配置
     ma: ma,
@@ -49,7 +36,7 @@ module.exports = function(grunt) {
                 '<%=ma.path.dist%>/css'
             ],
             // Extend default settings to support CDN url.
-            patterns: require('./config/grunt/useminPattern').pattern(cdnRoot)
+            patterns: require('./config/grunt/useminPattern').pattern()
         }
     },
 
@@ -83,8 +70,6 @@ module.exports = function(grunt) {
     jsx2js: require('./config/grunt/jsx2js')
   });
 
-  //grunt.loadNpmTasks('grunt-webpack');
-  //grunt.loadNpmTasks('webpack-dev-server');
   grunt.registerTask('default', [
     'clean:server',
     'webpack',
