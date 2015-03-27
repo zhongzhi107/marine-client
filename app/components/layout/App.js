@@ -37,7 +37,7 @@ var DefaultLayout = React.createClass({
         <div className="pure-u-2-5 text-right">
           <ol className="list-inline">
             <li><Link to="/about">关于我们</Link></li>
-            <li><Link to="feedback">意见反馈</Link></li>
+            <li><Link to="/feedback">意见反馈</Link></li>
           </ol>
         </div>
       </footer>
