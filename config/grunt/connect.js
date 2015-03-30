@@ -9,7 +9,7 @@ module.exports = function(grunt) {
   };
 
   return {
-    rules: require('../routerAPI'),
+    rules: require('../mock'),
     dev: {
       options: {
         port: grunt.option('port') || ma.port.www,
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             mountFolder(connect, '.tmp'),
             mountFolder(connect, ma.path.app),
             rewriteRulesSnippet,
-            require('../serverRender')
+            require('../../lib/serverRender')
           ];
         }
       }
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
           return [
             mountFolder(connect, ma.path.dist),
             rewriteRulesSnippet,
-            require('../serverRender')
+            require('../../lib/serverRender')
           ];
         }
       }

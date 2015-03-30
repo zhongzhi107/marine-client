@@ -11,7 +11,7 @@ var ExecutionEnvironment = require('react/lib/ExecutionEnvironment');
 var {Router} = require('director');
 var Dispatcher = require('./core/Dispatcher');
 var ActionTypes = require('./constants/ActionTypes');
-var urlrewrite = require('../config/urlrewrite');
+var urlrewrite = require('../config/router');
 
 // Export React so the dev tools can find it
 (window !== window.top ? window.top : window).React = React;
@@ -41,7 +41,7 @@ Dispatcher.register((payload) => {
  */
 function render(action, query) {
   var Page = require('./components/pages/' + action + '.js');
-  var queryStringParse = require('../config/queryStringParse');
+  var queryStringParse = require('../lib/queryStringParse');
   var layout = null, child = null, props = queryStringParse(query) || {};
 
   while ((layout = Page.type.layout || (Page.defaultProps && Page.defaultProps.layout))) {

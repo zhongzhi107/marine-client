@@ -29,7 +29,7 @@ module.exports = {
     files: [
       {
         expand: true,
-        src: 'config/{queryStringParse,urlrewrite}.js',
+        src: ['lib/queryStringParse.js', 'config/router.js'],
         dest: '<%=ma.path.dist%>/refs'
       },
       {

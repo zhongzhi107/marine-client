@@ -63,7 +63,7 @@ var HotelListPage = React.createClass({
     //     });
     //   }
     // });
-    http.get('/api/hotelList').accept('application/json').end((err, res) => {
+    http.get('/api/hotel/hotelList').accept('application/json').end((err, res) => {
       if (err) {
         console.log(err.stack);
       }
