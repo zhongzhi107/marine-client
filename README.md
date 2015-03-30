@@ -1,10 +1,10 @@
 #Marine
 
-> This project template is a skeleton for an [isomorphic](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/)
-> web application (SPA) based on Facebook's [React](https://facebook.github.io/react/)
-> library and [Flux](http://facebook.github.io/flux/) architecture. You can use
-> it to quickly bootstrap your web application projects. All the parts of this
-> project template are easily replaceable.
+>本项目模版是前后端一体化
+>（[isomorphic](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/)）
+>单页面应用（SPA）基础框架，它基于 Facebook
+>[React](https://facebook.github.io/react/)组件库
+>和 [Flux](http://facebook.github.io/flux/) 架构。
 
 ### 目标
 
@@ -58,7 +58,7 @@ Flux架构相关阅读：
 └── package.json                # package.json
 ```
 
-### 开始入门
+### 开始
 
 [clone](github-windows://openRepo/https://github.com/zhongzhi107/marine-client) 或者 [fork](https://github.com/zhongzhi107/marine-client/fork) marine 仓库:
 
