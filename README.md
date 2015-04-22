@@ -11,6 +11,12 @@
 * 解决SPA（单页面应用）SEO问题
 * 前后端工程一体化
 
+### TODO
+
+* 开发环境webpack改成增量打包
+* 编译时支持打成多个包，运行时支持异步加载
+* 使用ES6的继承方式修改代码
+
 ### 关键字
 node, react, webpack, director, grunt, ejs, koa, koa-router, JSX, ECMAScript 6
 
