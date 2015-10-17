@@ -1,10 +1,10 @@
 /**
  * @fileOverview Grunt URL rewrite rule config file
- * @author <a href="mailto:zhi.zhong@qunar.com">Zhongzhi</a>
+ * @author <a href="mailto:zhi.zhong@xxxx.com">Zhongzhi</a>
  * @version	1.0.1
  * @TODO: 解决80端口代理错误
  *
- * Copyright (c) 2015 Qunar.com
+ * Copyright (c) 2015 xxxx.com
  */
 
 module.exports = {

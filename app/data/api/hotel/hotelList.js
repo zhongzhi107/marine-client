@@ -15,7 +15,7 @@ module.exports = function(req, res) {
       id: i+1,
       name: '北京京仪大酒店' + i,
       address: '北京市海淀区大钟寺东路9号',
-      image: 'http://userimg.qunar.com/imgs/201410/25/GIGWX47MHTgwYKxg776.jpg',
+      image: 'http://userimg.xxxx.com/imgs/201410/25/GIGWX47MHTgwYKxg776.jpg',
       star: '高档',
       price: 100 * (i+1)
     });

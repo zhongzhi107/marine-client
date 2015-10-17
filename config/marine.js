@@ -16,7 +16,7 @@ module.exports = {
   // 访问不同环境对应的qzz域名
   cdnDomain: {
     dev: 'http://localhost:9002',
-    beta: 'http://mobileqzz.beta.qunar.com/xx/prd',
-    prod: 'http://qunarzz.com/xx/prd'
+    beta: 'http://mobileqzz.beta.xxxx.com/xx/prd',
+    prod: 'http://xxxxzz.com/xx/prd'
   },
 };

@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         port: grunt.option('port') || ma.port.www,
         // change this to '0.0.0.0' to access the server from outside
         hostname: '0.0.0.0',
-        //localhost: 'my.qunar.com',
+        //localhost: 'my.xxxx.com',
         localhost: grunt.option('host') || 'localhost',
         //keepalive: true,
         //open: true,
