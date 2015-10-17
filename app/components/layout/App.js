@@ -32,7 +32,7 @@ var DefaultLayout = React.createClass({
     var footer = (
       <footer className="pure-g footer">
         <div className="pure-u-3-5 text-left">
-          <span>Qunar 京ICP备05021087</span>
+          <span>xxxx 京ICP备05021087</span>
         </div>
         <div className="pure-u-2-5 text-right">
           <ol className="list-inline">

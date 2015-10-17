@@ -102,7 +102,7 @@ $ grunt                         # or, `grunt server`
 
 使用maven作为前后端工程关联的工具和桥梁，将前端工程中需要copy到后端工程的文件放在 `dist/refs` 目录，在后端工程编译时，maven会讲refs拷贝到后端工程。
 
-<img src="http://simg4.qunarzz.com/site/images/zhuanti/huodong/maven-zhongzhi.png" style="width:100%" alt="maven" />
+<img src="http://simg4.xxxxzz.com/site/images/zhuanti/huodong/maven-zhongzhi.png" style="width:100%" alt="maven" />
 
 ### 扩展阅读
 

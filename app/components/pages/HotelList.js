@@ -14,9 +14,9 @@ var HotelListPage = React.createClass({
   statics: {
     layout: App,
     meta: {
-      title: '<%=city%>酒店_<%=city%>酒店预订_<%=city%>酒店价格查询 - 去哪儿网Qunar.com',
+      title: '<%=city%>酒店_<%=city%>酒店预订_<%=city%>酒店价格查询 - xxxx网xxxx.com',
       keywords: '<%=city%>酒店, <%=city%>酒店预订/查询,<%=city%>酒店查询',
-      description: '<%=city%>酒店预订和北京酒店查询:您可以通过价格,行政区,商圈,星级等实时查询和比较<%=city%>酒店最新价格及报价! 去哪儿Qunar.com为您提供<%=city%>酒店预定一站式服务!'
+      description: '<%=city%>酒店预订和北京酒店查询:您可以通过价格,行政区,商圈,星级等实时查询和比较<%=city%>酒店最新价格及报价! xxxxxxxx.com为您提供<%=city%>酒店预定一站式服务!'
     }
   },
 
@@ -45,7 +45,7 @@ var HotelListPage = React.createClass({
       list: [{
         id: 100,
         name: '来自服务端的酒店名称',
-        image: 'http://himg.qunarzz.com/imgs/201411/10/GIGWX47ObtXhth68776.jpg',
+        image: 'http://himg.xxxxzz.com/imgs/201411/10/GIGWX47ObtXhth68776.jpg',
         star: '三星级酒店',
         address: 'xxxxxxxx',
         price: '350'
